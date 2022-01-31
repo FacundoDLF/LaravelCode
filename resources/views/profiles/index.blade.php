@@ -7,15 +7,18 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4dTIxPhK73Ecs215sQu0-5Kf5HMUDXKHvpAeTLyU5p9mr_vlcbvMP50EZNxdMuZlb9XU&usqp=CAU" alt="freeCodeGramLogo" class="rounded-circle" style="width: 150px;">
         </div>
         <div class="col-9 pt-5 ps-5">
-            <div class="d-flex"><h1>{{ $user->username }}</h1></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>{{ $user->username ?? 'No username' }}</h1>
+                <a class="btn btn-primary" href="#">Add New post</a>
+            </div>
             <div class="d-flex">
                 <div class="pe-4"><strong>153</strong>posts</div>
                 <div class="pe-4"><strong>23k</strong>followers</div>
                 <div class="pe-4"><strong>212</strong>following</div>
             </div>
-            <div class="pt-4 fw-bold">{{ $user->profile->title }}</div>
-            <div><p>{{ $user->profile->description }}</p></div>
-            <div><a href="#">{{ $user->profile->url }}</a></div>
+            <div class="pt-4 fw-bold">{{ $user->profile->title ?? 'No title' }}</div>
+            <div><p>{{ $user->profile->description ?? 'No description' }}</p></div>
+            <div><a href="#">{{ $user->profile->url ?? 'No URL' }}</a></div>
         </div>
     </div>
     <div class="row pt-5">
